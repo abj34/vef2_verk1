@@ -1,0 +1,31 @@
+{
+  "name": "vef_verk1",
+  "version": "1.0.0",
+  "description": "Verkefni 1 í Vefforritun 2 - 2023",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abj34/vef2_verk1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abj34/vef2_verk1/issues"
+  },
+  "homepage": "https://github.com/abj34/vef2_verk1#readme",
+  "devDependencies": {
+    "@jest/globals": "^29.3.1",
+    "browser-sync": "^2.27.11",
+    "eslint": "^8.32.0",
+    "jest": "^29.3.1",
+    "prettier": "^2.8.3",
+    "stylelint": "^14.16.1"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
