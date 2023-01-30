@@ -4,7 +4,8 @@
   "description": "Verkefni 1 í Vefforritun 2 - 2023",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest ./*.test.js",
+    "build": "node ./src/build.js && cpy public dist",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest ./parser.test.js",
     "coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage --collectCoverageFrom=\"./src/**/*.js\""
   },
   "repository": {

@@ -29,6 +29,7 @@ describe('file', () => {
             const result = await readFilesFromDir("./src/test/test-folder");
             expect(result).toEqual([
                 'src\\test\\test-folder\\emptyfile.txt',
+                'src\\test\\test-folder\\realtest.csv',
                 'src\\test\\test-folder\\testfile.csv',
                 'src\\test\\test-folder\\testfile.txt',
             ]);
