@@ -1,5 +1,5 @@
-import { readdir, readFile as fsReadFile, stat } from 'fs/promises';
-import { join } from 'path';
+import { readdir, readFile as fsReadFile, stat } from "fs/promises";
+import { join } from "path";
 
 /**
  * Athuga ef mappa er til
@@ -7,12 +7,12 @@ import { join } from 'path';
  * @returns 'true' ef hún er til, 'false' ef ekki
  */
 export async function direxists(dir) {
-    try {
-        const info = await stat(dir);
-        return info.isDirectory();
-    } catch(e) {
-        return false;
-    }
+  try {
+    const info = await stat(dir);
+    return info.isDirectory();
+  } catch (e) {
+    return false;
+  }
 }
 
 /**
@@ -21,43 +21,42 @@ export async function direxists(dir) {
  * @returns {string[]} Listi af skjölum og slóðin að þeim, tómt ef ekkert er í möppu eða error
  */
 export async function readFilesFromDir(dir) {
-    let files = [];
-    try {
-        files = await readdir(dir);
-    } catch(e) {
-        return [];
+  let files = [];
+  try {
+    files = await readdir(dir);
+  } catch (e) {
+    return [];
+  }
+
+  const mapped = files.map(async (file) => {
+    const path = join(dir, file);
+    const info = await stat(path);
+
+    if (info.isDirectory()) {
+      return null;
     }
-    
-    const mapped = files.map(async(file) => {
-        const path = join(dir, file);
-        const info = await stat(path);
 
-        if(info.isDirectory()) {
-            return null;
-        }
+    return path;
+  });
 
-        return path;
-    });
+  const resolved = await Promise.all(mapped);
 
-    const resolved = await Promise.all(mapped);
-
-    // Ef null, fjarlægja úr lista
-    return resolved.filter(Boolean);
+  // Ef null, fjarlægja úr lista
+  return resolved.filter(Boolean);
 }
 
 /**
  * Les skjal og skilar innihaldi
  * @param {string} file skjalið
- * @param {object} encoding ritháttur sem vilt sýna í 
+ * @param {object} encoding ritháttur sem vilt sýna í
  * @returns {Promise<string | null>} innihald skjals, null ef ekkert
  */
-export async function readFile(file, { encoding = 'utf8' } = {}) {
-    try {
-
-        const content = await fsReadFile(file);
-        const binaryBuffer = Buffer.from(content,'binary').toString('binary');
-        return binaryBuffer.toString(encoding);
-    } catch(e) {
-        return null;
-    }
+export async function readFile(file, { encoding = "utf8" } = {}) {
+  try {
+    const content = await fsReadFile(file);
+    const binaryBuffer = Buffer.from(content, "binary").toString("binary");
+    return binaryBuffer.toString(encoding);
+  } catch (e) {
+    return null;
+  }
 }

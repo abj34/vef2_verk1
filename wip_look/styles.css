@@ -1,9 +1,9 @@
 ul {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  list-style: none;
 }
 
 li {
-    grid-column: span 1;
+  grid-column: span 1;
 }
