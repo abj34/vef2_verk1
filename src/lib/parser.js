@@ -4,7 +4,8 @@ export function parse(input) {
         return [];
     }
 
-    const split = input.split('\n');
+    // Það er greinilega '\r\n' í windows en '\n' virkar á öðrum stýrikerfum??
+    const split = input.split('\r\n');
 
     const mapped = split.map((i) => {
         return i.split(';');

@@ -2,6 +2,7 @@ import { mkdir, writeFile } from 'fs/promises';
 import path, { join } from 'path';
 import { direxists, readFilesFromDir, readFile } from './lib/file.js';
 import { statsTemplate } from './lib/html.js';
+import { parse } from './lib/parser.js'
 
 
 const DATA_DIR = './data/*.csv';
@@ -19,10 +20,9 @@ async function main() {
 
         
     const content = [
-        //["Það","Ætti","Að","Vera","Svona",], ["Það","Ætti","Að","Vera","Svona",], ["Það","Ætti","Að","Vera","Svona",]
-        {first: "Það", second: "Ætti", third: "Að", fourth: "Vera", fifth: "Svona"},
-        {first: "Tíminn", second: "Mun sýna hvernig þetta", third: "Muni", fourth: "Virka", fifth: "https://vonandi.is"},
-        {first: "FOO", second: "Fai Fum Famm", third: "Boon", fourth: "BANN", fifth: "https://BRAKK.is"}
+        ["Það","Ætti","Að","Vera","Svona","",],
+        ["Tíminn","Mun sýna hvernig þetta","Muni","Virka","https://vonandi.is",],
+        ["FOO","Fai Fum Famm","Boon","BANN","https://BRAKK.is"]
     ];
 
     if(content) {

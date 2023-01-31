@@ -12,6 +12,8 @@ function template(title, content) {
 }
 
 function formatValue(val) {
+
+
     return val.toString();
 }
 
@@ -21,7 +23,7 @@ export function stats(result) {
 
     const resultHtml = entries
         .map(
-            ([key,val]) => `<ul>${key}<li>${formatValue(val)}</li></ul>`
+            (i) => `<ul><li>${formatValue(i)}</li></ul>` 
         )
         .join('\n');
     
