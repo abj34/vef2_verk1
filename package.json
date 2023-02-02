@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node ./src/build.js && cpy public dist",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest ./file.test.js",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest ./parser.test.js",
     "coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage --collectCoverageFrom=\"./src/**/*.js\"",
     "dev": "browser-sync start --serveStatic ./dist --server --files ./public/styles.css ./dist/*.html",
     "prettier": "prettier --write .",
