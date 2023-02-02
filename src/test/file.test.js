@@ -29,10 +29,10 @@ describe("file", () => {
     it("should return array of files with path for dir that does exist", async () => {
       const result = await readFilesFromDir("./src/test/test-folder");
       expect(result).toEqual([
-        "src\\test\\test-folder\\emptyfile.txt",
-        "src\\test\\test-folder\\realtest.csv",
-        "src\\test\\test-folder\\testfile.csv",
-        "src\\test\\test-folder\\testfile.txt",
+        "src/test/test-folder/emptyfile.txt",
+        "src/test/test-folder/realtest.csv",
+        "src/test/test-folder/testfile.csv",
+        "src/test/test-folder/testfile.txt",
       ]);
     });
   });

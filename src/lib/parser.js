@@ -12,7 +12,7 @@ export function parse(input) {
   }
 
   // Það er greinilega '\r\n' í windows en '\n' virkar á öðrum stýrikerfum??
-  const split = input.split("\r\n");
+  const split = input.split("\n");
 
   // eslint-disable-next-line arrow-body-style
   const mapped = split.map((i) => {
