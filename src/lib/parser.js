@@ -39,7 +39,7 @@ export function JsonToCSV(input, keys) {
 
 /**
  * Filter'ar niður innihald eftir ákveðnum sviðum
- * @param {string[]} input
+ * @param {string[]} input array af strengjum, áfangar sem eru kenndir
  * @returns filter'að array
  */
 export function filter(input) {
@@ -60,7 +60,7 @@ export function filter(input) {
       input[i].shift();
     }
 
-    if (input[i].length === 7) {
+    if (input[i].length > 6) {
       input.splice(i);
       continue;
     }
@@ -81,15 +81,8 @@ export function filter(input) {
       }
     }
 
-    //  if (input[i][3] === 'Vor' || input[i][3] === 'Haust' || input[i][3] === 'Sumar') {
-    //    //continue;
-    //  } else {
-    //    input.splice(i);
-    //    continue;
-    //  }
-
-    if (input[i][4] === "") {
-      input.slice(i);
+    if (input[i][4] === undefined || input[i][4] === "") {
+      input.splice(i);
       continue;
     }
 
