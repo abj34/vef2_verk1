@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { readdir, readFile as fsReadFile, stat } from "fs/promises";
 import { join } from "path";
 

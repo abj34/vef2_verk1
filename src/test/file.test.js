@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { describe, expect, it } from "@jest/globals";
 import { direxists, readFile, readFilesFromDir } from "../lib/file";
 
