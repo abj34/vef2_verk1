@@ -38,5 +38,8 @@
     "stylelint": "^14.16.1",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-standard": "^29.0.0"
+  },
+  "dependencies": {
+    "jest": "^29.3.1"
   }
 }
