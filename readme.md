@@ -103,7 +103,7 @@ Fyrir `eslint` og `prettier` skal fylgja því sem uppsett var í [verkefni 9](h
 
 ### GitHub & Netlify
 
-Setja skal upp vefinn með niðurstöðum á Netlify tengt við GitHub.
+Setja skal upp vefinn með niðurstöðum á Netlify tengt við GitHub..
 
 ## Mat
 
